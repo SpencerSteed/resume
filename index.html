@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spencer Steed - Software Developer</title>
+    <meta name="description" content="Professional resume of Spencer Steed - Software Developer and Technology Professional">
+    <meta name="keywords" content="resume, software developer, spencer steed, technology, programming, web development">
+    <meta name="author" content="Spencer Steed">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://spencersteed.github.io/resume/">
+    <meta property="og:title" content="Spencer Steed - Software Developer">
+    <meta property="og:description" content="Professional resume showcasing skills, experience, and achievements">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://spencersteed.github.io/resume/">
+    <meta property="twitter:title" content="Spencer Steed - Software Developer">
+    <meta property="twitter:description" content="Professional resume showcasing skills, experience, and achievements">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #2c5282 0%, #1a365d 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c5282 0%, #1a365d 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header .subtitle {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.1);
+            padding: 0.8rem 1.2rem;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            opacity: 0.8;
+        }
+
+        .main-content {
+            padding: 3rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+        .section:nth-child(5) { animation-delay: 0.5s; }
+        .section:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section h2 {
+            color: #2c5282;
+            border-bottom: 3px solid #2c5282;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #1a365d;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 4px solid #2c5282;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .experience-item:hover, .education-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .job-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .company {
+            color: #2c5282;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .duration {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .description {
+            margin-top: 1rem;
+            line-height: 1.7;
+        }
+
+        .description ul {
+            padding-left: 1.5rem;
+        }
+
+        .description li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .description li::marker {
+            color: #2c5282;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #2c5282;
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .skill-category h3 {
+            color: #2c5282;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 0.5rem 0;
+            color: #555;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .skill-list li::before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            color: #2c5282;
+            font-size: 0.8rem;
+        }
+
+        .achievements {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid #28a745;
+        }
+
+        .achievements h3 {
+            color: #28a745;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .achievements ul {
+            list-style: none;
+        }
+
+        .achievements li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .achievements li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .download-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #2c5282 0%, #1a365d 100%);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .print-only {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .main-content {
+                padding: 2rem 1rem;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .download-btn {
+                top: 10px;
+                right: 10px;
+                padding: 10px 20px;
+                font-size: 12px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .container {
+                box-shadow: none;
+            }
+            
+            .print-only {
+                display: block;
+            }
+
+            .download-btn {
+                display: none;
+            }
+
+            .section {
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="download-btn" onclick="window.print()">📄 Print Resume</button>
+    
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1>Spencer Steed</h1>
+                <div class="subtitle">Software Engineer IV at Asurion</div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span>📧</span>
+                        <a href="mailto:spencer.steed@gmail.com">spencer.steed@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>📱</span>
+                        <a href="tel:+16156633225">(615) 663-3225</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>🌐</span>
+                        <a href="https://linkedin.com/in/ssteed" target="_blank">linkedin.com/in/ssteed</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>💻</span>
+                        <a href="https://github.com/spencersteed" target="_blank">github.com/spencersteed</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <span>Nashville, TN</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="section">
+                <h2>Professional Summary</h2>
+                <p>Experienced Software Engineer IV at Asurion with expertise in full-stack development, DevOps engineering, and leading technical initiatives. Passionate about creating efficient, maintainable code and delivering high-quality products that drive business value. Strong background in React/TypeScript frontend development, backend services, and cloud infrastructure with a proven track record of implementing enterprise-wide solutions and mentoring teams.</p>
+            </section>
+
+            <section class="section">
+                <h2>Work Experience</h2>
+                <div class="experience-item">
+                    <div class="job-title">Software Engineer IV</div>
+                    <div class="company">Asurion</div>
+                    <div class="duration">September 2022 - Present</div>
+                    <div class="description">
+                        <ul>
+                            <li>Led enterprise-wide implementation of Spotify's Backstage platform, developing custom React/TypeScript plugins and templates for streamlined repository and PR creation workflows</li>
+                            <li>Successfully onboarded over 1,700 users to the Backstage platform, significantly improving developer productivity and standardization across engineering teams</li>
+                            <li>Architected and maintained DevOps platforms for multiple teams using Infrastructure as Code tools including AWS CDK (TypeScript), Terraform, and Kubernetes (EKS/GKE) with ArgoCD</li>
+                            <li>Established enterprise-level GitHub administration including GitHub Apps, OAuth applications, and reusable workflow templates</li>
+                            <li>Spearheaded Kubernetes standardization initiative across Asurion, including cluster buildouts, Helm charts, Kustomize configurations, and automated deployment pipelines</li>
+                            <li>Developed Backstage automation enabling new application teams to achieve full Kubernetes infrastructure deployment in minutes</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-title">Software Engineer III</div>
+                    <div class="company">Asurion</div>
+                    <div class="duration">September 2018 - September 2022</div>
+                    <div class="description">
+                        <ul>
+                            <li>Architected and deployed enterprise-wide Jenkins infrastructure using Terraform, creating over 50 Jenkins stacks across different teams at Asurion in AWS</li>
+                            <li>Established company-wide standards and automation for Jenkins creation, management, and updates, significantly improving consistency and reliability</li>
+                            <li>Implemented and supported Spinnaker deployment platform on Kubernetes, leveraging Netflix's open-source continuous delivery tool for streamlined application deployments</li>
+                            <li>Performed DevOps responsibilities for development teams, managing multiple infrastructure setups including AWS Lambda, EKS, and EC2 servers</li>
+                            <li>Developed extensive automation scripts and workflows to support enterprise-scale CI/CD operations across multiple development teams</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-title">Infrastructure Engineer II</div>
+                    <div class="company">Asurion</div>
+                    <div class="duration">June 2016 - September 2018</div>
+                    <div class="description">
+                        <ul>
+                            <li>Provided DevOps support for multiple teams with Linux system management and Bash scripting</li>
+                            <li>Served as ETL Analyst and Database Administrator, managing MSSQL databases and data integration processes</li>
+                            <li>Worked with multiple ETL tools including Informatica, Hadoop, IBM Optim, and Talend for enterprise data processing</li>
+                            <li>Developed custom data transfer tools that streamlined ETL processes, significantly improving efficiency across the enterprise</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-title">Infrastructure Engineer I</div>
+                    <div class="company">Asurion</div>
+                    <div class="duration">May 2014 - June 2016</div>
+                    <div class="description">
+                        <ul>
+                            <li>Served as Database Administrator for MSSQL, managing and maintaining enterprise database systems</li>
+                            <li>Operated multiple in-house ETL tools, ensuring reliable data processing and integration workflows</li>
+                            <li>Provided on-call support and successfully deployed multiple production deployments</li>
+                            <li>Maintained critical data ingestion processes, ensuring seamless data flow from client systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <div class="job-title">Bachelor of Science in Computer Science</div>
+                    <div class="company">Tennessee Tech University</div>
+                    <div class="duration">August 2010 - May 2014</div>
+                    <div class="description">Relevant coursework: Data Structures & Algorithms, Software Engineering, Database Systems, Computer Networks, Operating Systems, Programming Languages</div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Programming Languages</h3>
+                        <ul class="skill-list">
+                            <li>TypeScript</li>
+                            <li>JavaScript (ES6+)</li>
+                            <li>Python</li>
+                            <li>SQL (MSSQL)</li>
+                            <li>Bash Scripting</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Frontend Development</h3>
+                        <ul class="skill-list">
+                            <li>React.js</li>
+                            <li>TypeScript</li>
+                            <li>HTML5 & CSS3</li>
+                            <li>Custom Plugin Development for Backstage</li>
+                            <li>Responsive Web Design</li>
+                            <li>Modern JavaScript (ES6+)</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Cloud & Infrastructure</h3>
+                        <ul class="skill-list">
+                            <li>AWS CDK (TypeScript)</li>
+                            <li>Terraform</li>
+                            <li>Kubernetes (EKS/GKE)</li>
+                            <li>AWS Lambda</li>
+                            <li>Extensive Cloud Experience (AWS & GCP)</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>DevOps & CI/CD</h3>
+                        <ul class="skill-list">
+                            <li>GitHub Actions</li>
+                            <li>ArgoCD</li>
+                            <li>Helm Charts</li>
+                            <li>Backstage</li>
+                            <li>Jenkins</li>
+                            <li>Spinnaker</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Data & ETL</h3>
+                        <ul class="skill-list">
+                            <li>Database Administration (MSSQL)</li>
+                            <li>ETL Tools (Informatica, Talend)</li>
+                            <li>Hadoop</li>
+                            <li>IBM Optim</li>
+                            <li>Data Integration</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Enterprise & Leadership</h3>
+                        <ul class="skill-list">
+                            <li>Platform Engineering</li>
+                            <li>Developer Experience</li>
+                            <li>Technical Mentoring</li>
+                            <li>Cross-team Collaboration</li>
+                            <li>Enterprise Architecture</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Key Achievements</h2>
+                <div class="achievements">
+                    <h3>Professional Highlights</h3>
+                    <ul>
+                        <li>Led enterprise-wide implementation of Spotify's Backstage platform at Asurion, successfully onboarding over 1,700 users</li>
+                        <li>Achieved 2nd Place at Asurion's 2025 Hackathon, demonstrating innovation and technical excellence</li>
+                        <li>Deployed, standardized, and maintained over 50 Jenkins instances across Asurion's entire enterprise infrastructure</li>
+                        <li>Completed Asurion White-Belt Leadership Training with focus on mentoring and coaching methodologies</li>
+                        <li>Spearheaded Kubernetes standardization initiative, enabling new application teams to achieve full infrastructure deployment in minutes</li>
+                        <li>Developed custom data transfer tools that streamlined ETL processes, significantly improving efficiency across the enterprise</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
